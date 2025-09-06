@@ -5,8 +5,8 @@ public class Livro {
     private String isbn;
     private Autor autor;
 
-    Livro(){
-        System.out.println("Livro Criado");
+    public Livro(Autor autor){
+        this.autor = autor;
     }
 
     void mostrarDetalhes(){
@@ -33,12 +33,14 @@ public class Livro {
     }
 
 
-    void aplicarDescontoDe(double porcentagem){
+    public boolean aplicarDescontoDe(double porcentagem){
         if(porcentagem > 20){
             System.out.println("Desconto não pode ser maior que 20%");
-            return;
+            return false;
         }
         valor -= valor * porcentagem / 100;
+
+        return true;
     }
 
     /*void setValor(double valor){
