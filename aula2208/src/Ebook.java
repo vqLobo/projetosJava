@@ -16,7 +16,7 @@ public class Ebook extends Livro {
 
     @Override
     void mostrarDetalhes(){
-        String mensagem = "Detalhes do livro: ";
+        String mensagem = "Detalhes do livro Ebook: ";
         System.out.println(mensagem);
         System.out.println("Nome: " + getNome());
         System.out.println("Descricao: " + getDescricao());
