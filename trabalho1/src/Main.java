@@ -14,10 +14,6 @@ public class Main {
         a1.setPeso(88);
         a1.setEsportePraticado("Futebol");
 
-        //aplicando os métodos
-        a1.CalcularIMC();
-        p1.CalcularIMC();
-
         //imprimindo no terminal
         p1.MostrarDetalhes();
         a1.MostrarDetalhes();
