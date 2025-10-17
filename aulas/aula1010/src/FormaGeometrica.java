@@ -6,13 +6,13 @@ public abstract class FormaGeometrica {
     }
 
     public void exibirCor() {
-        System.out.println("A cor da Forma e: " + getCor());
+        System.out.println("A cor da Forma é: " + getCor());
     }
 
     public abstract double calcularArea();
 
     public void exibirDetalhes(){
-        System.out.println("A cor da Forma e: " + cor);
+        System.out.println("A cor da Forma é: " + cor);
         System.out.println(calcularArea());
         System.out.println("---------------------");
     }
