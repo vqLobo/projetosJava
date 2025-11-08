@@ -3,7 +3,7 @@ public class ContaCorrente extends Conta implements OperacoesBancarias{
     @Override
     public void atualizarSaldo() throws SaldoInsuficienteException {
         double saldoAtual = super.getSaldo();
-        double taxaSaque = saldoAtual * 0.995;
+        double taxaSaque = saldoAtual * 0.005;
 
         sacar(taxaSaque);
     }
@@ -14,6 +14,8 @@ public class ContaCorrente extends Conta implements OperacoesBancarias{
         if(saldoConta < saldoTransferencia){
             throw new SaldoInsuficienteException("Saldo Insuficiente");
         }
+        sacar(saldoTransferencia);
+        destino.depositar(saldoTransferencia);
     }
 
     @Override

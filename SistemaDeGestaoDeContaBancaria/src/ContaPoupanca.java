@@ -3,7 +3,8 @@ public class ContaPoupanca extends Conta implements OperacoesBancarias{
     @Override
     public void atualizarSaldo() {
         double saldoAtual = super.getSaldo();
-        double rendimentoMensal = saldoAtual * 1.03;
+        double rendimentoMensal = saldoAtual * 0.03;
+        depositar(rendimentoMensal);
     }
 
     @Override
@@ -12,6 +13,8 @@ public class ContaPoupanca extends Conta implements OperacoesBancarias{
         if(saldoConta < saldoTransferencia){
             throw new SaldoInsuficienteException("Saldo Insuficiente");
         }
+        sacar(saldoTransferencia);
+        destino.depositar(saldoTransferencia);
     }
 
     @Override

@@ -1,4 +1,4 @@
-public abstract class Conta {
+public abstract class Conta implements OperacoesBancarias {
 
     //atributos da conta
 
@@ -11,7 +11,7 @@ public abstract class Conta {
         saldo += valor;
     }
     public void sacar(double valor) throws SaldoInsuficienteException {
-        if (saldo > valor){
+        if (saldo < valor){
             throw new SaldoInsuficienteException("Saldo insuficiente");
         } else {
             saldo -= valor;
@@ -33,4 +33,9 @@ public abstract class Conta {
     //metodo abstrato
     public abstract void atualizarSaldo() throws SaldoInsuficienteException;
 
+    @Override
+    public abstract void transferir(Conta destino, double saldo) throws SaldoInsuficienteException;
+
+    @Override
+    public abstract void imprimirExtrato();
 }
